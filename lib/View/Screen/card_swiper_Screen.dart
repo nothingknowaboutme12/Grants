@@ -186,11 +186,16 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                                 });
                               },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: listtilecolor,
-                            elevation: 0.0,
-                            shape: RoundedRectangleBorder(
-                                side: const BorderSide(color: Colors.white),
-                                borderRadius: BorderRadius.circular(10))),
+                          backgroundColor: listtilecolor,
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10),
+                              topLeft: Radius.circular(10),
+                            ),
+                          ),
+                        ),
                         child: Text(
                           indexnum == 2 ? "Go to main screen" : "Go to next",
                           style: const TextStyle(

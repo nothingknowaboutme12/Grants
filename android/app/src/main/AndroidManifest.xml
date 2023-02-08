@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="grants"
+        android:label="I Hour 2 Grants"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
