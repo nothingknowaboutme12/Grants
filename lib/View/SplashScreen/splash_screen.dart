@@ -2,9 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:grants/Utiles/utilies.dart';
+import 'package:grants/View/Screen/card_swiper_Screen.dart';
 import 'package:grants/generated/assets.dart';
-
-import '../Screen/card_swiper_Screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -45,7 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   borderRadius: BorderRadius.circular(8),
                   color: backgroundColor,
                   image: const DecorationImage(
-                      image: AssetImage(Assets.assetsIconLogo), fit: BoxFit.fill),
+                      image: AssetImage(Assets.assetsIconLogo),
+                      fit: BoxFit.fill),
                 ),
               ),
               SizedBox(
