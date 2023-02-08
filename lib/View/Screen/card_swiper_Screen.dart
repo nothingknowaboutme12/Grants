@@ -14,9 +14,9 @@ class CardSwiperScreen extends StatefulWidget {
 class _CardSwiperScreenState extends State<CardSwiperScreen> {
   @override
   List<String> imaglist = [
-    Assets.Img1,
-    Assets.Img2,
-    Assets.Img3,
+    Assets.assetsTest,
+    Assets.cardSwiperAssetImg2,
+    Assets.cardSwiperAssetImg3,
   ];
 
   List<String> text = [
@@ -72,9 +72,9 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
             ),
             const Spacer(),
             Container(
-              height: size.height / 2.8,
+              height: size.height / 3.1,
               width: size.width,
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(imaglist[indexnum]),
