@@ -75,10 +75,10 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
             ),
             Spacer(),
             Container(
-              height: size.height / 3.1,
+              height: size.height / 2.9,
               width: size.width,
               margin: EdgeInsets.symmetric(
-                  vertical: size.height / 18, horizontal: size.width / 9),
+                  vertical: size.height / 18, horizontal: size.width / 8),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(imaglist[indexnum]),
