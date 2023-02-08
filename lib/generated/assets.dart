@@ -11,6 +11,6 @@ class Assets {
   static const String cardSwiperAssetImg1 = 'assets/CardSwiperAsset/img1.jpg';
   static const String cardSwiperAssetImg2 = 'assets/CardSwiperAsset/img2.jpg';
   static const String cardSwiperAssetImg3 = 'assets/CardSwiperAsset/img3.jpg';
+  static const String devassetAppicon = 'devasset/appicon.png';
   static const String grantsAssetsIconLogo = 'assets/icon_logo.jpeg';
-
 }
