@@ -55,8 +55,8 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                           wordSpacing: 1.2,
                           fontWeight: FontWeight.bold,
                           fontSize: size.width > 600
-                              ? size.width / 25
-                              : size.width / 15),
+                              ? size.height / 28
+                              : size.height / 24),
                     ),
                     SizedBox(
                       height: size.height / 80,
@@ -86,7 +86,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                 ),
               ),
               Container(
-                height: size.height / 3.05,
+                height: size.height / 3.2,
                 width: size.width,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -99,7 +99,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.min,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -166,41 +166,43 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                     SizedBox(
                       height: indexnum == 0 ? 13 : size.height / 28,
                     ),
-                    Container(
-                      height: size.height / 12,
-                      width: size.width,
-                      // decoration: BoxDecoration(
-                      // borderRadius: BorderRadius.circular(10)),
-                      child: ElevatedButton(
-                        onPressed: indexnum == 2
-                            ? () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => HomeScreen(),
-                                    ),
-                                    (route) => false);
-                              }
-                            : () {
-                                setState(() {
-                                  indexnum++;
-                                });
-                              },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: listtilecolor,
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              topLeft: Radius.circular(10),
+                    Expanded(
+                      child: Container(
+                        height: size.height / 12,
+                        width: size.width,
+                        // decoration: BoxDecoration(
+                        // borderRadius: BorderRadius.circular(10)),
+                        child: ElevatedButton(
+                          onPressed: indexnum == 2
+                              ? () {
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomeScreen(),
+                                      ),
+                                      (route) => false);
+                                }
+                              : () {
+                                  setState(() {
+                                    indexnum++;
+                                  });
+                                },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: listtilecolor,
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10),
+                                topLeft: Radius.circular(10),
+                              ),
                             ),
                           ),
-                        ),
-                        child: Text(
-                          indexnum == 2 ? "Go to main screen" : "Go to next",
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
+                          child: Text(
+                            indexnum == 2 ? "Go to main screen" : "Go to next",
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
