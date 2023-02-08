@@ -14,7 +14,7 @@ class CardSwiperScreen extends StatefulWidget {
 class _CardSwiperScreenState extends State<CardSwiperScreen> {
   @override
   List<String> imaglist = [
-    Assets.assetsTest,
+    Assets.cardSwiperAssetImg1,
     Assets.cardSwiperAssetImg2,
     Assets.cardSwiperAssetImg3,
   ];
@@ -22,7 +22,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
   List<String> text = [
     "First Time Dr. Barbara Babbi Wright introduce mobile application to helps people to write grants in half the time.",
     "A beautiful customized template preview in PDF form upon completion.",
-    "Instantly save or print your customized template in PDF form upon completion."
+    "Instantly save or print as well as share your customized template in PDF form upon completion."
   ];
 
   int indexnum = 0;
@@ -36,7 +36,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: size.height / 5,
+              height: size.height / 4.7,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Color(0xff2A3990),
@@ -74,7 +74,8 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
             Container(
               height: size.height / 3.1,
               width: size.width,
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+              margin: EdgeInsets.symmetric(
+                  vertical: size.height / 18, horizontal: size.width / 9),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(imaglist[indexnum]),
@@ -98,6 +99,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: size.height / 50,
@@ -165,7 +167,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                     ),
                     Container(
                       height: size.height / 12,
-                      width: size.width / 1.10,
+                      width: size.width,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10)),
                       child: ElevatedButton(
