@@ -331,299 +331,198 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          color: backgroundColor,
+      body: SafeArea(
+        bottom: false,
+        child: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: size.width > 600 ? size.width / 5 : size.width / 30,
-                vertical: size.height / 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: size.height / 10,
-                ),
-                Container(
-                  height: size.height / 6,
-                  width: size.width > 600 ? size.width / 4 : size.width / 1.5,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/logo.png"),
-                      fit: BoxFit.fill,
-                      filterQuality: FilterQuality.high,
+            color: backgroundColor,
+            child: Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: size.width > 600 ? size.width / 5 : size.width / 30,
+                  vertical: size.height / 40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: size.height / 10,
+                  ),
+                  Container(
+                    height: size.height / 6,
+                    width: size.width > 600 ? size.width / 4 : size.width / 1.5,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/logo.png"),
+                        fit: BoxFit.fill,
+                        filterQuality: FilterQuality.high,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height:
-                      size.width > 360 ? size.height / 90 : size.height / 80,
-                ),
-                Container(
-                  // height: size.height,
-                  width: size.width,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
+                  SizedBox(
+                    height:
+                        size.width > 360 ? size.height / 90 : size.height / 80,
                   ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: size.height / 13,
-                      ),
-                      Container(
-                        height: size.height / 8,
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                          color: Color(0xff2A3990),
-                          // borderRadius: BorderRadius.circular(4),
+                  Container(
+                    // height: size.height,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: size.height / 13,
                         ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              SizedBox(
-                                height: size.height > 300 ? 10 : 15,
-                              ),
-                              Text(
-                                "1 Hour 2 Grants",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    letterSpacing: 1.2,
-                                    wordSpacing: 1.2,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: size.width > 600 ? 25 : 20),
-                              ),
-                              SizedBox(
-                                height: size.height / 80,
-                              ),
-                              Text(
-                                "(CDB Do It Yourself Grant Template Builder)",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: size.width > 600 ? 15 : 15,
-                                  // fontWeight: FontWeight.bold,
-                                  // fontSize: 18,
+                        Container(
+                          height: size.height / 8,
+                          width: double.infinity,
+                          decoration: const BoxDecoration(
+                            color: Color(0xff2A3990),
+                            // borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: size.height > 300 ? 10 : 15,
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  "1 Hour 2 Grants",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      letterSpacing: 1.2,
+                                      wordSpacing: 1.2,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: size.width > 600 ? 25 : 20),
+                                ),
+                                SizedBox(
+                                  height: size.height / 80,
+                                ),
+                                Text(
+                                  "(CDB Do It Yourself Grant Template Builder)",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: size.width > 600 ? 15 : 15,
+                                    // fontWeight: FontWeight.bold,
+                                    // fontSize: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      GeneralInfo(
-                        size: size,
-                        changeTileStatus: generalStatus,
-                        validatorSize: generalValidatorHeight,
-                        formKey: generalformKey,
-                        imagepath: pickedImagePath,
-                        CrossImageFun: crossImageFun,
-                        selectImageFun: pickImageFromGalley,
-                        OrganizationState: OrganizationState,
-                        establishedYear: establishedYear,
-                        yearofactive: yearofactive,
-                        OrganiztionName: OrganiztionName,
-                        EdfirstName: EdfirstName,
-                        EdlastName: EdlastName,
-                        EdBio: EdBio,
-                        EdPhone: EdPhone,
-                        EdEmail: EdEmail,
-                        GcPhone: GcPhone,
-                        GcEmail: GcEmail,
-                        PdFirstName: PdFirstName,
-                        PdLastName: PdLastName,
-                        PdBio: PdBio,
-                        PcFirstName: PcFirstName,
-                        PcLastName: PcLastName,
-                        PcBio: PcBio,
-                      ),
-                      Reasearch(
-                        formKey: researchformKey,
-                        changeTileStatus: researchStatus,
-                        size: size,
-                        PublicianName: PublicianName,
-                        PQUOTE: PQUOTE,
-                        NPublicianName: NPubliciaName,
-                        NQUOTE: NQUOTE,
-                        CLGIStatement: CLGIStatement,
-                      ),
-                      Planing(
-                        size: size,
-                        changeTileStatus: planningStatus,
-                        formKey: planningformKey,
-                        ProgramStatement: ProgramStatement,
-                        MissionStatement: MissionStatement,
-                        GoalStatement: GoalStatement,
-                        OutComeStatement: OutComeStatement,
-                        AGGFUNDER: AGGFUNDER,
-                        ProgramImpact: ImpactStatement,
-                        ProgramStatus: ProgramStatus,
-                      ),
-                      Budget4(
+                        GeneralInfo(
                           size: size,
-                          changeTileStatus: budgetStatus,
-                          validatorSize: budgetValidatorHeight,
-                          formKey: budgetformKey,
-                          TotalBudget: TotalBudget,
-                          AmountScured: AmountScured,
-                          AmountRequested: AmountRequested),
-                      ProgramParticipant5(
-                          formKey: programParticipantformKey,
-                          changeTileStatus: programStatus,
+                          changeTileStatus: generalStatus,
+                          validatorSize: generalValidatorHeight,
+                          formKey: generalformKey,
+                          imagepath: pickedImagePath,
+                          CrossImageFun: crossImageFun,
+                          selectImageFun: pickImageFromGalley,
+                          OrganizationState: OrganizationState,
+                          establishedYear: establishedYear,
+                          yearofactive: yearofactive,
+                          OrganiztionName: OrganiztionName,
+                          EdfirstName: EdfirstName,
+                          EdlastName: EdlastName,
+                          EdBio: EdBio,
+                          EdPhone: EdPhone,
+                          EdEmail: EdEmail,
+                          GcPhone: GcPhone,
+                          GcEmail: GcEmail,
+                          PdFirstName: PdFirstName,
+                          PdLastName: PdLastName,
+                          PdBio: PdBio,
+                          PcFirstName: PcFirstName,
+                          PcLastName: PcLastName,
+                          PcBio: PcBio,
+                        ),
+                        Reasearch(
+                          formKey: researchformKey,
+                          changeTileStatus: researchStatus,
                           size: size,
-                          applicableCategory: applicableCategory),
-                      Participant6(
-                        size: size,
-                        changeTileStatus: participantStatus,
-                        programpriorty: programPeriorty,
-                        formKey: participantformKey,
-                      ),
-                      LocationStatus(
-                        size: size,
-                        changeTileStatus: locationStatus,
-                        zipCode: zipCode,
-                        formKey: locationformKey,
-                      ),
-                      Evulations(
-                        size: size,
-                        changeTileStatus: evalutionStatus,
-                        formKey: evalutionformKey,
-                        input1: input1,
-                        input2: input2,
-                        input3: input3,
-                        output1: output1,
-                        output2: output2,
-                        output3: output3,
-                        outcome1: outcome1,
-                        outcome2: outcome2,
-                        outcome3: outcome3,
-                        Measure1: Measure1,
-                        Measure2: Measure2,
-                        Measure3: Measure3,
-                        Verification1: Verification1,
-                        Verification2: Verification2,
-                        Verification3: Verification3,
-                      ),
-                      Partner(
+                          PublicianName: PublicianName,
+                          PQUOTE: PQUOTE,
+                          NPublicianName: NPubliciaName,
+                          NQUOTE: NQUOTE,
+                          CLGIStatement: CLGIStatement,
+                        ),
+                        Planing(
                           size: size,
-                          changeTileStatus: partnerStatus,
-                          formKey: partnerformKey,
-                          Partner1: Partner1,
-                          Partner2: Partner2,
-                          Partner3: Partner3,
-                          Partner1Provides: Partner1Provides,
-                          Partner2Provides: Partner2Provides,
-                          Partner3Provides: Partner3Provides),
-                      Container(
-                        height: size.height / 13,
-                        margin: const EdgeInsets.all(1.5),
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            /*OrganiztionName.text.isNotEmpty &&
-                                EdfirstName.text.isNotEmpty &&
-                                EdlastName.text.isNotEmpty &&
-                                EdBio.text.isNotEmpty &&
-                                EdEmail.text.isNotEmpty &&
-                                EdPhone.text.isNotEmpty &&
-                                GcPhone.text.isNotEmpty &&
-                                GcEmail.text.isNotEmpty &&
-                                PdFirstName.text.isNotEmpty &&
-                                PdLastName.text.isNotEmpty &&
-                                PdBio.text.isNotEmpty &&
-                                PcFirstName.text.isNotEmpty &&
-                                PcLastName.text.isNotEmpty &&
-                                PcBio.text.isNotEmpty &&
-                                AGGFUNDER.text.isNotEmpty &&
-                                ProgramStatement.text.isNotEmpty &&
-                                MissionStatement.text.isNotEmpty &&
-                                GoalStatement.text.isNotEmpty &&
-                                OutComeStatement.text.isNotEmpty &&
-                                ImpactStatement.text.isNotEmpty &&
-                                ProgramStatus.text.isNotEmpty &&
-                                CLGIStatement.text.isNotEmpty &&
-                                PublicianName.text.isNotEmpty &&
-                                PQUOTE.text.isNotEmpty &&
-                                NPubliciaName.text.isNotEmpty &&
-                                NQUOTE.text.isNotEmpty &&
-                                OrganizationState.text.isNotEmpty &&
-                                yearofactive.text.isNotEmpty &&
-                                establishedYear.text.isNotEmpty &&
-                                TotalBudget.text.isNotEmpty &&
-                                AmountRequested.text.isNotEmpty &&
-                                AmountScured.text.isNotEmpty &&
-                                applicableCategory.text.isNotEmpty &&
-                                programPeriorty.text.isNotEmpty &&
-                                zipCode.text.isNotEmpty &&
-                                input1.text.isNotEmpty &&
-                                input2.text.isNotEmpty &&
-                                input3.text.isNotEmpty &&
-                                output1.text.isNotEmpty &&
-                                output2.text.isNotEmpty &&
-                                output3.text.isNotEmpty &&
-                                outcome1.text.isNotEmpty &&
-                                outcome2.text.isNotEmpty &&
-                                outcome3.text.isNotEmpty &&
-                                Verification1.text.isNotEmpty &&
-                                Verification2.text.isNotEmpty &&
-                                Verification3.text.isNotEmpty &&
-                                Measure1.text.isNotEmpty &&
-                                Measure2.text.isNotEmpty &&
-                                Measure3.text.isNotEmpty &&
-                                Partner1.text.isNotEmpty &&
-                                Partner2.text.isNotEmpty &&
-                                Partner3.text.isNotEmpty &&
-                                Partner1Provides.text.isNotEmpty &&
-                                Partner2Provides.text.isNotEmpty &&
-                                pickedImagePath != null &&
-                                Partner3Provides.text.isNotEmpty;*/
-                            bool general =
-                                generalformKey.currentState!.validate();
-
-                            if (!general) {
-                              //generalStatus(true);
-                              generalformKey.currentState!.validate();
-                              setState(() {
-                                generalValidatorHeight = 10;
-                              });
-                            }
-                            bool research =
-                                researchformKey.currentState!.validate();
-                            bool planning =
-                                planningformKey.currentState!.validate();
-                            bool budget =
-                                budgetformKey.currentState!.validate();
-
-                            if (!budget) {
-                              setState(() {
-                                budgetValidatorHeight = 10;
-                              });
-                            }
-                            bool program = programParticipantformKey
-                                .currentState!
-                                .validate();
-                            bool participant =
-                                participantformKey.currentState!.validate();
-                            bool location =
-                                locationformKey.currentState!.validate();
-                            bool evalution =
-                                evalutionformKey.currentState!.validate();
-                            bool partner =
-                                partnerformKey.currentState!.validate();
-                            print(
-                                "general $general research $research planning $planning budget $budget program $program"
-                                "participant $participant location $location evolution $evalution partner $partner"
-                                "");
-                            if (general &&
-                                research &&
-                                planning &&
-                                budget &&
-                                program &&
-                                participant &&
-                                location &&
-                                evalution &&
-                                partner) {
-                              if (OrganiztionName.text.isNotEmpty &&
+                          changeTileStatus: planningStatus,
+                          formKey: planningformKey,
+                          ProgramStatement: ProgramStatement,
+                          MissionStatement: MissionStatement,
+                          GoalStatement: GoalStatement,
+                          OutComeStatement: OutComeStatement,
+                          AGGFUNDER: AGGFUNDER,
+                          ProgramImpact: ImpactStatement,
+                          ProgramStatus: ProgramStatus,
+                        ),
+                        Budget4(
+                            size: size,
+                            changeTileStatus: budgetStatus,
+                            validatorSize: budgetValidatorHeight,
+                            formKey: budgetformKey,
+                            TotalBudget: TotalBudget,
+                            AmountScured: AmountScured,
+                            AmountRequested: AmountRequested),
+                        ProgramParticipant5(
+                            formKey: programParticipantformKey,
+                            changeTileStatus: programStatus,
+                            size: size,
+                            applicableCategory: applicableCategory),
+                        Participant6(
+                          size: size,
+                          changeTileStatus: participantStatus,
+                          programpriorty: programPeriorty,
+                          formKey: participantformKey,
+                        ),
+                        LocationStatus(
+                          size: size,
+                          changeTileStatus: locationStatus,
+                          zipCode: zipCode,
+                          formKey: locationformKey,
+                        ),
+                        Evulations(
+                          size: size,
+                          changeTileStatus: evalutionStatus,
+                          formKey: evalutionformKey,
+                          input1: input1,
+                          input2: input2,
+                          input3: input3,
+                          output1: output1,
+                          output2: output2,
+                          output3: output3,
+                          outcome1: outcome1,
+                          outcome2: outcome2,
+                          outcome3: outcome3,
+                          Measure1: Measure1,
+                          Measure2: Measure2,
+                          Measure3: Measure3,
+                          Verification1: Verification1,
+                          Verification2: Verification2,
+                          Verification3: Verification3,
+                        ),
+                        Partner(
+                            size: size,
+                            changeTileStatus: partnerStatus,
+                            formKey: partnerformKey,
+                            Partner1: Partner1,
+                            Partner2: Partner2,
+                            Partner3: Partner3,
+                            Partner1Provides: Partner1Provides,
+                            Partner2Provides: Partner2Provides,
+                            Partner3Provides: Partner3Provides),
+                        Container(
+                          height: size.height / 13,
+                          margin: const EdgeInsets.all(1.5),
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              /*OrganiztionName.text.isNotEmpty &&
                                   EdfirstName.text.isNotEmpty &&
                                   EdlastName.text.isNotEmpty &&
                                   EdBio.text.isNotEmpty &&
@@ -678,75 +577,194 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Partner3.text.isNotEmpty &&
                                   Partner1Provides.text.isNotEmpty &&
                                   Partner2Provides.text.isNotEmpty &&
-                                  Partner3Provides.text.isNotEmpty) {
-                                if (pickedImagePath.isNotEmpty) {
-                                  Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                      builder: (context) => PdfViewScreen(
-                                        OName: OrganiztionName.text,
-                                        EdFName: EdfirstName.text,
-                                        EdLName: EdfirstName.text,
-                                        EdBio: EdBio.text,
-                                        EdNumber: EdPhone.text,
-                                        EdEmail: EdEmail.text,
-                                        GcNumber: GcPhone.text,
-                                        GcEmail: GcEmail.text,
-                                        PdFName: PdFirstName.text,
-                                        PdLName: PdLastName.text,
-                                        PdBio: PdLastName.text,
-                                        PcFName: PcFirstName.text,
-                                        PcLName: PcLastName.text,
-                                        PcBio: PcBio.text,
-                                        OState: OrganizationState.text,
-                                        yearEsatablished: establishedYear.text,
-                                        OActiveyear: yearofactive.text,
-                                        CLGIStatement: CLGIStatement.text,
-                                        GGFunder: AGGFUNDER.text,
-                                        ProgramStatement: ProgramStatement.text,
-                                        MissionStatement: MissionStatement.text,
-                                        GoalStatement: GoalStatement.text,
-                                        OutComeStatement: OutComeStatement.text,
-                                        ImpactStatement: ImpactStatement.text,
-                                        // StaticsStatement: StatementStatics.text,
-                                        ToalBudget: TotalBudget.text,
-                                        AmountScrud: AmountScured.text,
-                                        AmountRequested: AmountRequested.text,
-                                        ApplicableCategory:
-                                            applicableCategory.text,
-                                        ProgramPeriorty: programPeriorty.text,
-                                        ProgramStatus: ProgramStatus.text,
-                                        StateRegion: zipCode.text,
-                                        Input1: input1.text,
-                                        Input2: input2.text,
-                                        Input3: input3.text,
-                                        OutCome1: outcome1.text,
-                                        OutCome2: outcome2.text,
-                                        OutCome3: outcome3.text,
-                                        Output1: output1.text,
-                                        Output2: output2.text,
-                                        Output3: output3.text,
-                                        Measure1: Measure1.text,
-                                        Measure2: Measure2.text,
-                                        Measure3: Measure3.text,
-                                        Verification1: Verification1.text,
-                                        Verification2: Verification2.text,
-                                        Verification3: Verification3.text,
-                                        Partner1: Partner1.text,
-                                        Partner2: Partner2.text,
-                                        Partner3: Partner3.text,
-                                        Partner1Provide: Partner1Provides.text,
-                                        Partner2Provide: Partner2Provides.text,
-                                        Partner3Provide: Partner3Provides.text,
-                                        NPName: NPubliciaName.text,
-                                        NPQuote: NQUOTE.text,
-                                        LPName: PublicianName.text,
-                                        LPQuote: PQUOTE.text,
-                                        ProgramCategory:
-                                            applicableCategory.text,
-                                        image: pickedImagePath,
+                                  pickedImagePath != null &&
+                                  Partner3Provides.text.isNotEmpty;*/
+                              bool general =
+                                  generalformKey.currentState!.validate();
+
+                              if (!general) {
+                                //generalStatus(true);
+                                generalformKey.currentState!.validate();
+                                setState(() {
+                                  generalValidatorHeight = 10;
+                                });
+                              }
+                              bool research =
+                                  researchformKey.currentState!.validate();
+                              bool planning =
+                                  planningformKey.currentState!.validate();
+                              bool budget =
+                                  budgetformKey.currentState!.validate();
+
+                              if (!budget) {
+                                setState(() {
+                                  budgetValidatorHeight = 10;
+                                });
+                              }
+                              bool program = programParticipantformKey
+                                  .currentState!
+                                  .validate();
+                              bool participant =
+                                  participantformKey.currentState!.validate();
+                              bool location =
+                                  locationformKey.currentState!.validate();
+                              bool evalution =
+                                  evalutionformKey.currentState!.validate();
+                              bool partner =
+                                  partnerformKey.currentState!.validate();
+                              print(
+                                  "general $general research $research planning $planning budget $budget program $program"
+                                  "participant $participant location $location evolution $evalution partner $partner"
+                                  "");
+                              if (general &&
+                                  research &&
+                                  planning &&
+                                  budget &&
+                                  program &&
+                                  participant &&
+                                  location &&
+                                  evalution &&
+                                  partner) {
+                                if (OrganiztionName.text.isNotEmpty &&
+                                    EdfirstName.text.isNotEmpty &&
+                                    EdlastName.text.isNotEmpty &&
+                                    EdBio.text.isNotEmpty &&
+                                    EdEmail.text.isNotEmpty &&
+                                    EdPhone.text.isNotEmpty &&
+                                    GcPhone.text.isNotEmpty &&
+                                    GcEmail.text.isNotEmpty &&
+                                    PdFirstName.text.isNotEmpty &&
+                                    PdLastName.text.isNotEmpty &&
+                                    PdBio.text.isNotEmpty &&
+                                    PcFirstName.text.isNotEmpty &&
+                                    PcLastName.text.isNotEmpty &&
+                                    PcBio.text.isNotEmpty &&
+                                    AGGFUNDER.text.isNotEmpty &&
+                                    ProgramStatement.text.isNotEmpty &&
+                                    MissionStatement.text.isNotEmpty &&
+                                    GoalStatement.text.isNotEmpty &&
+                                    OutComeStatement.text.isNotEmpty &&
+                                    ImpactStatement.text.isNotEmpty &&
+                                    ProgramStatus.text.isNotEmpty &&
+                                    CLGIStatement.text.isNotEmpty &&
+                                    PublicianName.text.isNotEmpty &&
+                                    PQUOTE.text.isNotEmpty &&
+                                    NPubliciaName.text.isNotEmpty &&
+                                    NQUOTE.text.isNotEmpty &&
+                                    OrganizationState.text.isNotEmpty &&
+                                    yearofactive.text.isNotEmpty &&
+                                    establishedYear.text.isNotEmpty &&
+                                    TotalBudget.text.isNotEmpty &&
+                                    AmountRequested.text.isNotEmpty &&
+                                    AmountScured.text.isNotEmpty &&
+                                    applicableCategory.text.isNotEmpty &&
+                                    programPeriorty.text.isNotEmpty &&
+                                    zipCode.text.isNotEmpty &&
+                                    input1.text.isNotEmpty &&
+                                    input2.text.isNotEmpty &&
+                                    input3.text.isNotEmpty &&
+                                    output1.text.isNotEmpty &&
+                                    output2.text.isNotEmpty &&
+                                    output3.text.isNotEmpty &&
+                                    outcome1.text.isNotEmpty &&
+                                    outcome2.text.isNotEmpty &&
+                                    outcome3.text.isNotEmpty &&
+                                    Verification1.text.isNotEmpty &&
+                                    Verification2.text.isNotEmpty &&
+                                    Verification3.text.isNotEmpty &&
+                                    Measure1.text.isNotEmpty &&
+                                    Measure2.text.isNotEmpty &&
+                                    Measure3.text.isNotEmpty &&
+                                    Partner1.text.isNotEmpty &&
+                                    Partner2.text.isNotEmpty &&
+                                    Partner3.text.isNotEmpty &&
+                                    Partner1Provides.text.isNotEmpty &&
+                                    Partner2Provides.text.isNotEmpty &&
+                                    Partner3Provides.text.isNotEmpty) {
+                                  if (pickedImagePath.isNotEmpty) {
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                        builder: (context) => PdfViewScreen(
+                                          OName: OrganiztionName.text,
+                                          EdFName: EdfirstName.text,
+                                          EdLName: EdfirstName.text,
+                                          EdBio: EdBio.text,
+                                          EdNumber: EdPhone.text,
+                                          EdEmail: EdEmail.text,
+                                          GcNumber: GcPhone.text,
+                                          GcEmail: GcEmail.text,
+                                          PdFName: PdFirstName.text,
+                                          PdLName: PdLastName.text,
+                                          PdBio: PdLastName.text,
+                                          PcFName: PcFirstName.text,
+                                          PcLName: PcLastName.text,
+                                          PcBio: PcBio.text,
+                                          OState: OrganizationState.text,
+                                          yearEsatablished: establishedYear.text,
+                                          OActiveyear: yearofactive.text,
+                                          CLGIStatement: CLGIStatement.text,
+                                          GGFunder: AGGFUNDER.text,
+                                          ProgramStatement: ProgramStatement.text,
+                                          MissionStatement: MissionStatement.text,
+                                          GoalStatement: GoalStatement.text,
+                                          OutComeStatement: OutComeStatement.text,
+                                          ImpactStatement: ImpactStatement.text,
+                                          // StaticsStatement: StatementStatics.text,
+                                          ToalBudget: TotalBudget.text,
+                                          AmountScrud: AmountScured.text,
+                                          AmountRequested: AmountRequested.text,
+                                          ApplicableCategory:
+                                              applicableCategory.text,
+                                          ProgramPeriorty: programPeriorty.text,
+                                          ProgramStatus: ProgramStatus.text,
+                                          StateRegion: zipCode.text,
+                                          Input1: input1.text,
+                                          Input2: input2.text,
+                                          Input3: input3.text,
+                                          OutCome1: outcome1.text,
+                                          OutCome2: outcome2.text,
+                                          OutCome3: outcome3.text,
+                                          Output1: output1.text,
+                                          Output2: output2.text,
+                                          Output3: output3.text,
+                                          Measure1: Measure1.text,
+                                          Measure2: Measure2.text,
+                                          Measure3: Measure3.text,
+                                          Verification1: Verification1.text,
+                                          Verification2: Verification2.text,
+                                          Verification3: Verification3.text,
+                                          Partner1: Partner1.text,
+                                          Partner2: Partner2.text,
+                                          Partner3: Partner3.text,
+                                          Partner1Provide: Partner1Provides.text,
+                                          Partner2Provide: Partner2Provides.text,
+                                          Partner3Provide: Partner3Provides.text,
+                                          NPName: NPubliciaName.text,
+                                          NPQuote: NQUOTE.text,
+                                          LPName: PublicianName.text,
+                                          LPQuote: PQUOTE.text,
+                                          ProgramCategory:
+                                              applicableCategory.text,
+                                          image: pickedImagePath,
+                                        ),
                                       ),
-                                    ),
-                                  );
+                                    );
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        duration: const Duration(seconds: 1),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: size.width / 50),
+                                        action: SnackBarAction(
+                                          label: "Close",
+                                          textColor: backgroundColor,
+                                          onPressed: () {},
+                                        ),
+                                        content: const Text(
+                                            "Select Organization Logo"),
+                                      ),
+                                    );
+                                  }
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -759,56 +777,41 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onPressed: () {},
                                       ),
                                       content: const Text(
-                                          "Select Organization Logo"),
+                                          "Please fulfill the complete requirements"),
                                     ),
                                   );
                                 }
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    duration: const Duration(seconds: 1),
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: size.width / 50),
-                                    action: SnackBarAction(
-                                      label: "Close",
-                                      textColor: backgroundColor,
-                                      onPressed: () {},
-                                    ),
-                                    content: const Text(
-                                        "Please fulfill the complete requirements"),
-                                  ),
-                                );
                               }
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: listtilecolor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(2),
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: listtilecolor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(2),
+                              ),
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              // padding: EdgeInsets.symmetric(
+                              //     horizontal: size.width / 2.5, vertical: 0),
                             ),
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            // padding: EdgeInsets.symmetric(
-                            //     horizontal: size.width / 2.5, vertical: 0),
-                          ),
-                          child: Text(
-                            "Submit",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: size.width > 600 ? 20 : 13,
+                            child: Text(
+                              "Submit",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: size.width > 600 ? 20 : 13,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 2,
-                      ),
-                    ],
+                        const SizedBox(
+                          height: 2,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                // SizedBox(
-                //   height: size.height / 40,
-                // ),
-              ],
+                  // SizedBox(
+                  //   height: size.height / 40,
+                  // ),
+                ],
+              ),
             ),
           ),
         ),

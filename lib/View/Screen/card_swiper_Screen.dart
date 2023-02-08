@@ -32,11 +32,14 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
+        bottom: false,
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
+          //mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: size.height / 4.7,
+              height: size.height / 5.2,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Color(0xff2A3990),
@@ -70,7 +73,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                 ],
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Container(
               height: size.height / 3.1,
               width: size.width,
@@ -83,8 +86,9 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                 ),
               ),
             ),
-            const Spacer(),
-            Container(
+            Spacer(),
+
+           Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -92,13 +96,13 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                     Colors.black45,
 
                     listtilecolor.withOpacity(0.6),
-                    // Colors.deepPurple,
                   ],
                 ),
               ),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
+
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -168,8 +172,8 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                     Container(
                       height: size.height / 12,
                       width: size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
+                      // decoration: BoxDecoration(
+                          // borderRadius: BorderRadius.circular(10)),
                       child: ElevatedButton(
                         onPressed: indexnum == 2
                             ? () {
@@ -187,9 +191,9 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                               },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: listtilecolor,
-                          elevation: 0.0,
+                          elevation: 2.0,
                           shape: RoundedRectangleBorder(
-                            side: const BorderSide(color: Colors.white),
+
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(10),
                               topLeft: Radius.circular(10),
@@ -208,7 +212,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
