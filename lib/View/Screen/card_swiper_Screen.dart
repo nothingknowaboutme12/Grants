@@ -33,76 +33,73 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         bottom: false,
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          //mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              height: size.height / 5.2,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xff2A3990),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "1 Hour 2 Grants",
-                    style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 1.2,
-                        wordSpacing: 1.2,
-                        fontWeight: FontWeight.bold,
-                        fontSize: size.width > 600
-                            ? size.width / 25
-                            : size.width / 15),
-                  ),
-                  SizedBox(
-                    height: size.height / 80,
-                  ),
-                  Text(
-                    "(CDB Do It Yourself Grant Template Builder)",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: size.width > 600 ? 15 : size.width / 22,
-                      // fontWeight: FontWeight.bold,
-                      // fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Spacer(),
-            Container(
-              height: size.height / 2.9,
-              width: size.width,
-              margin: EdgeInsets.symmetric(
-                  vertical: size.height / 18, horizontal: size.width / 8),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imaglist[indexnum]),
-                  fit: BoxFit.fill,
+        child: SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: size.height / 5.2,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Color(0xff2A3990),
                 ),
-              ),
-            ),
-            Spacer(),
-
-           Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  colors: [
-                    Colors.black45,
-
-                    listtilecolor.withOpacity(0.6),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "1 Hour 2 Grants",
+                      style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 1.2,
+                          wordSpacing: 1.2,
+                          fontWeight: FontWeight.bold,
+                          fontSize: size.width > 600
+                              ? size.width / 25
+                              : size.width / 15),
+                    ),
+                    SizedBox(
+                      height: size.height / 80,
+                    ),
+                    Text(
+                      "(CDB Do It Yourself Grant Template Builder)",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: size.width > 600 ? 15 : size.width / 22,
+                        // fontWeight: FontWeight.bold,
+                        // fontSize: 18,
+                      ),
+                    ),
                   ],
                 ),
               ),
-              child: SingleChildScrollView(
+              Container(
+                height: size.height / 2.9,
+                width: size.width,
+                margin: EdgeInsets.symmetric(
+                    vertical: size.height / 18, horizontal: size.width / 8),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(imaglist[indexnum]),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              Container(
+                height: size.height / 3.05,
+                width: size.width,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    colors: [
+                      Colors.black45,
+                      listtilecolor.withOpacity(0.6),
+                    ],
+                  ),
+                ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisSize: MainAxisSize.min,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -173,7 +170,7 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                       height: size.height / 12,
                       width: size.width,
                       // decoration: BoxDecoration(
-                          // borderRadius: BorderRadius.circular(10)),
+                      // borderRadius: BorderRadius.circular(10)),
                       child: ElevatedButton(
                         onPressed: indexnum == 2
                             ? () {
@@ -193,7 +190,6 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                           backgroundColor: listtilecolor,
                           elevation: 2.0,
                           shape: RoundedRectangleBorder(
-
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(10),
                               topLeft: Radius.circular(10),
@@ -212,8 +208,8 @@ class _CardSwiperScreenState extends State<CardSwiperScreen> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
